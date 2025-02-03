@@ -25,6 +25,13 @@ app.post('/contact-us', (req,res,next)=>{
     res.send('<h1> Home details received </h1>')
 })
 
+app.use('/', (req,res,next) =>{
+    console.log("First middleware", req.path, req.method);
+    res.send('<h1> Error 404! Page not found. </h1>')
+})
+
+
+
 
 PORT = 5005;
 app.listen(PORT, ()=>{
