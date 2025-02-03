@@ -1,6 +1,9 @@
 const express  = require('express');
 const app = express();
 
+app.use(express.urlencoded({ extended: true })); 
+
+
 app.get('/', (req,res,next) =>{
     console.log("First middleware", req.path, req.method);
     res.send('<h1> Home </h1>')
