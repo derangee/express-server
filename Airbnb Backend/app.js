@@ -7,7 +7,6 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req,res,next) =>{
     console.log("First middleware", req.path, req.method);
     res.send('<h1> Home </h1>')
-    next();
 })
 
 app.get('/contact-us', (req,res,next) =>{
@@ -19,7 +18,6 @@ app.get('/contact-us', (req,res,next) =>{
             <input type="text" name="price" placeholder="Enter the price of the home"/>
             <input type="submit"/>
         </form>  `)
-    next();    
 })
 
 app.post('/contact-us', (req,res,next)=>{
