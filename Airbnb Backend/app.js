@@ -13,6 +13,7 @@ app.get('/contact-us', (req,res,next) =>{
     console.log("Second middleware", req.path, req.method);
 
     res.send(`
+        <h1> Enter details </h1>
         <form action="/contact-us" method="POST">
             <input type="text" name="home" placeholder="Enter the name of the home"/>
             <input type="text" name="price" placeholder="Enter the price of the home"/>
