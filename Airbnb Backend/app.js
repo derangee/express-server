@@ -31,9 +31,6 @@ app.use('/', (req,res,next) =>{
     res.send('<h1> Error 404! Page not found. </h1>')
 })
 
-
-
-
 PORT = 5005;
 app.listen(PORT, ()=>{
     console.log(`Server running on http://localhost:${PORT}`);
