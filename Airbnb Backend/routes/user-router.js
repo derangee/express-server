@@ -1,6 +1,8 @@
-app.get('/', (req,res,next) =>{
-    console.log("First middleware", req.path, req.method);
+const express = require('express')
+const userRouter = express.Router()
+
+userRouter.get('/', (req,res,next) =>{
     res.send('<h1> Home </h1>')
 })
 
-module.exports = hostRouter;
+module.exports = userRouter;
