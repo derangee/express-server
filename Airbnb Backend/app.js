@@ -1,4 +1,5 @@
 const express  = require('express');
+const path = require('path')
 const app = express();
 
 
@@ -13,12 +14,17 @@ app.use('/', userRouter)
 
 const pathDir = require('./utils/path')
 
-app.use('/', (req,res,next) =>{ //404
-    console.log("404 malware", req.path, req.method);
-    res.status(404).sendFile(pathDir, 'views', '404.html')
-})
+app.use('/', (req, res) => {
+    console.log("404 malware", req.url, req.method);
+    res.status(404).sendFile(path.join(pathDir, 'views', '404.html'), (err) => {
+        if (err) {
+            console.log(err);
+            res.status(500).send('Error loading 404 page');
+        }
+    });
+});
 
-PORT = 5001;
+PORT = 8000;
 app.listen(PORT, ()=>{
     console.log(`Server running on http://localhost:${PORT}`);
 })
