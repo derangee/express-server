@@ -13,7 +13,7 @@ app.use('/', userRouter)
 
 app.use('/', (req,res,next) =>{ //404
     console.log("404 malware", req.path, req.method);
-    res.send('<h1> Error 404! Page not found. </h1>')
+    res.send('')
 })
 
 PORT = 5001;
