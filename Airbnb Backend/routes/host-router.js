@@ -15,5 +15,7 @@ hostRouter.post('/home-added', (req,res,next)=>{
     res.render('home-added')
 })
 
-exports.hostRouter = hostRouter
-exports.homes = homes
+module.exports = {
+    hostRouter: hostRouter,
+    homes: homes
+};
