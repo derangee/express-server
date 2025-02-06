@@ -6,12 +6,12 @@ const pathDir = require('../utils/path')
 
 
 hostRouter.get('/add-home', (req,res,next) =>{
-    res.sendFile(path.join(pathDir, 'views', 'add-home.html' ))
+    res.render('add-home')
 })
 
 hostRouter.post('/home-added', (req,res,next)=>{
     console.log(req.body);
-    res.sendFile(path.join(pathDir, 'views', 'home-added.html' ))
+    res.render('home-added')
 })
 
 module.exports = hostRouter
