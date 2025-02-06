@@ -38,6 +38,36 @@
         a:hover {
             background-color: #d63045;
         }
+        
+        .homes-grid {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 0 auto;
+            gap: 1rem;
+            padding: 2rem;
+            list-style: none;
+        }
+        
+        .home-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.2s ease;
+            width: 100%;
+            text-align: left;
+        }
+        
+        .home-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .home-card-content {
+            font-size: 1.1rem;
+            color: #484848;
+        }
     </style>
 </head>
 <body>
@@ -46,14 +76,19 @@
     </header>
     
     <section>
-        <ul>
-        <% homes.forEach(home => { %>
-            <li>
-                <%= home.House %> <br>
-            </li> 
-        <% }); %>        
+        <ul class="homes-grid">
+            <% homes.forEach(homes=>  { %>
+                <li class="home-card">
+                    <div class="home-card-content">
+                        <%= homes.Photo %>
+                        <%= homes.House %>
+                        <%= homes.Location %>
+                        <%= homes.Price %>
+                    </div>
+                </li>
+            <% }); %>
         </ul>    
-        <a href="host/add-home">Add home</a>
+    <a href="host/add-home"> Add home </a>
     </section>
 </body>
 </html>

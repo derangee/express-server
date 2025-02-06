@@ -11,7 +11,7 @@ hostRouter.get('/add-home', (req,res,next) =>{
 })
 
 hostRouter.post('/home-added', (req,res,next)=>{
-    homes.push({House : req.body.home, Location : req.body.location , Price : req.body.price});
+    homes.push({House : req.body.home, Location : req.body.location , Price : req.body.price, Photo : req.body.photo});
     res.render('home-added')
 })
 
