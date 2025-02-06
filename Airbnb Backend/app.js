@@ -2,6 +2,9 @@ const express  = require('express');
 const path = require('path')
 const app = express();
 
+const pathDir = require('./utils/path')
+
+app.use(express.static(path.join(pathDir, 'public')))
 
 
 const hostRouter = require('./routes/host-router')
@@ -12,7 +15,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/host', hostRouter)
 app.use('/', userRouter)
 
-const pathDir = require('./utils/path')
 
 app.use('/', (req, res) => {
     console.log("404 malware", req.url, req.method);

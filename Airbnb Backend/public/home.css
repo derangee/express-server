@@ -1,0 +1,24 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(250, 52, 52);
+    margin: 0;
+    padding: 30px;
+}
+
+section {
+    text-align: center;
+    margin-top: 5vw;
+}
+
+a{
+    text-decoration: none;
+    color: red;
+    font-size: larger;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
