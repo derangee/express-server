@@ -20,12 +20,7 @@ app.use('/', userRouter)
 
 app.use('/', (req, res) => {
     console.log("404 malware", req.url, req.method);
-    res.status(404).sendFile(path.join(pathDir, 'views', '404.html'), (err) => {
-        if (err) {
-            console.log(err);
-            res.status(500).send('Error loading 404 page');
-        }
-    });
+    res.status(404).render('404')
 });
 
 PORT = 8000;
