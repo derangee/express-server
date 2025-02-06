@@ -21,7 +21,12 @@
         
         section {
             text-align: center;
-            margin-top: 5vw;
+            margin: 5vw auto;
+            max-width: 1200px;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         
         a {
@@ -42,21 +47,21 @@
         .homes-grid {
             display: flex;
             flex-direction: column;
-            max-width: 600px;
-            margin: 0 auto;
-            gap: 1rem;
-            padding: 2rem;
+            gap: 2rem;
+            align-items: center;
+            margin: 0 auto 2rem auto;
             list-style: none;
+            width: 100%;
+            max-width: 400px;
         }
         
         .home-card {
             background: white;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            padding: 1.5rem;
+            overflow: hidden;
             transition: transform 0.2s ease;
             width: 100%;
-            text-align: left;
         }
         
         .home-card:hover {
@@ -65,8 +70,31 @@
         }
         
         .home-card-content {
+            padding: 1rem;
+        }
+
+        .home-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .home-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+
+        .home-location {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .home-price {
             font-size: 1.1rem;
-            color: #484848;
+            font-weight: bold;
+            color: #222;
         }
     </style>
 </head>
@@ -79,11 +107,11 @@
         <ul class="homes-grid">
             <% homes.forEach(homes=>  { %>
                 <li class="home-card">
+                    <img src="<%= homes.Photo %>" alt="Home" class="home-photo">
                     <div class="home-card-content">
-                        <%= homes.Photo %>
-                        <%= homes.House %>
-                        <%= homes.Location %>
-                        <%= homes.Price %>
+                        <h2 class="home-title"><%= homes.House %></h2>
+                        <p class="home-location"><%= homes.Location %></p>
+                        <p class="home-price">Rs. <%= homes.Price %> per night</p>
                     </div>
                 </li>
             <% }); %>
