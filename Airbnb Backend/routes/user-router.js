@@ -8,7 +8,7 @@ const {homes} = require('./host-router')
 
 userRouter.get('/', (req,res,next) =>{
     console.log(homes)
-    res.render('home')}
+    res.render('home', {homes : homes})}
 )
 
 module.exports = userRouter;

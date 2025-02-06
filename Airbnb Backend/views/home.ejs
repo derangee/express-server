@@ -46,6 +46,11 @@
     </header>
     
     <section>
+        <ul>
+            <% homes.forEach(homes=>  { %>
+                <li > <%= homes.home %> </li>
+            <% }); %>
+        </ul>    
     <a href="host/add-home"> Add home </a>
     </section>
 </body>
