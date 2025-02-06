@@ -9,6 +9,7 @@ header {
     background-color: rgb(250, 52, 52);
     margin: 0;
     padding: 30px;
+    color: white;
 }
 
 section {
@@ -30,7 +31,6 @@ form {
 }
 
 h1 {
-    color: #333;
     margin-bottom: 15px;
 }
 
