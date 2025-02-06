@@ -3,8 +3,10 @@ const path = require('path')
 const app = express();
 
 const pathDir = require('./utils/path')
-
 app.use(express.static(path.join(pathDir, 'public')))
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 
 const hostRouter = require('./routes/host-router')
