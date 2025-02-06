@@ -1,12 +1,15 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 header {
     background-color: rgb(250, 52, 52);
     margin: 0;
     padding: 30px;
+    color: #333;
 }
 
 section {
@@ -14,11 +17,17 @@ section {
     margin-top: 5vw;
 }
 
-a{
+a {
+    display: inline-block;
     text-decoration: none;
-    color: red;
-    font-size: larger;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 10px;
+    background-color: #ff385c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+a:hover {
+    background-color: #d63045;
 }
