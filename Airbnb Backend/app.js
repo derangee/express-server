@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 
-const hostRouter = require('./routes/host-router')
+const {hostRouter} = require('./routes/host-router')
 const userRouter = require('./routes/user-router')
 
 app.use(express.urlencoded({ extended: true })); 
@@ -17,8 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/host', hostRouter)
 app.use('/', userRouter)
 
-
-app.use('/', (req, res) => {
+app.use((req, res) => {
     console.log("404 malware", req.url, req.method);
     res.status(404).render('404')
 });

@@ -4,7 +4,10 @@ const userRouter = express.Router()
 
 const pathDir = require('../utils/path')
 
+const {homes} = require('./host-router')
+
 userRouter.get('/', (req,res,next) =>{
+    console.log(homes)
     res.render('home')}
 )
 
