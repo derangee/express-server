@@ -4,11 +4,8 @@ const userRouter = express.Router()
 
 const pathDir = require('../utils/path')
 
-const { homes } = require('./host-router')
+const homesController = require('../controllers/home')
 
-userRouter.get('/', (req, res) => {
-    console.log('Current homes:', homes)
-    res.render('home', { homes: homes })
-})
+userRouter.get('/', homesController.homePage)
 
 module.exports = userRouter;
