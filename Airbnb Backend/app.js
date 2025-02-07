@@ -17,10 +17,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/host', hostRouter)
 app.use('/', userRouter)
 
-app.use((req, res) => {
-    console.log("404 malware", req.url, req.method);
-    res.status(404).render('404')
-});
+const ErrorPage = require('./controllers/error')
+app.use(ErrorPage.error404);
 
 PORT = 8000;
 app.listen(PORT, ()=>{
