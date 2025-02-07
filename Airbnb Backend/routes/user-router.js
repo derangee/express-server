@@ -1,13 +1,9 @@
 const express = require('express')
-const path = require('path')
 const userRouter = express.Router()
 
-const pathDir = require('../utils/path')
 
-const { homes } = require('./host-router')
+const homesController = require('../controllers/home')
 
-userRouter.get('/', (req, res) => {
-    res.render('home', { homes: homes})
-})
+userRouter.get('/', homesController.homePage)
 
 module.exports = userRouter;

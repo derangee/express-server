@@ -13,3 +13,6 @@ exports.homeAdded = (req, res, next) => {
     res.render('home-added')
 };
 
+exports.homePage = (req, res) => {
+    res.render('home', { homes: homes})
+}
