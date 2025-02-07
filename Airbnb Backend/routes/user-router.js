@@ -4,8 +4,10 @@ const userRouter = express.Router()
 
 const pathDir = require('../utils/path')
 
-const homesController = require('../controllers/home')
+const { homes } = require('./host-router')
 
-userRouter.get('/', homesController.homePage)
+userRouter.get('/', (req, res) => {
+    res.render('home', { homes: homes})
+})
 
 module.exports = userRouter;
