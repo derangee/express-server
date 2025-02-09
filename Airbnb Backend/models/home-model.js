@@ -2,7 +2,6 @@ const path = require('path');
 const fs = require('fs')
 const rootDir = require('../utils/path')
 
-const homes = []
 
 module.exports = class Home {
     constructor(home, location,  price, photo ) {
