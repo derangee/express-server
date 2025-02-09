@@ -1,3 +1,4 @@
+const HomeModel = require('../models/home-model')
 let homes;
 
 exports.setHomes = (homesArray) => {
@@ -9,10 +10,12 @@ exports.addHome = (req, res, next) => {
 };
 
 exports.homeAdded = (req, res, next) => {
-    homes.push({ House: req.body.home,  Location: req.body.location,  Price: req.body.price,  Photo: req.body.photo });
+    const newHome = new HomeModel(req.body.home, req.body.location, req.body.price, req.body.photo)
+    newHome.save(); 
     res.render('home-added')
 };
 
 exports.homePage = (req, res) => {
-    res.render('home', { homes: homes})
+    const homes = HomeModel.fetchAll(); 
+    res.render('home', { homes: homes })
 }
