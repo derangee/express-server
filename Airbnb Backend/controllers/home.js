@@ -16,6 +16,7 @@ exports.homeAdded = (req, res, next) => {
 };
 
 exports.homePage = (req, res) => {
-    const homes = HomeModel.fetchAll(); 
-    res.render('home', { homes: homes })
+    const homes = HomeModel.fetchAll(homes => {
+        res.render('home', { homes: homes })
+    }); 
 }
