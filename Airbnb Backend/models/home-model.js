@@ -13,11 +13,14 @@ module.exports = class Home {
     }
 
     save() {
-        homes.push(this);
+        Home.fetchAll(homes => {
+            homes.push(this);
         const homePath = path.join(rootDir, 'data', 'homes.json');
         fs.writeFile(homePath, JSON.stringify(homes), error=>{
             console.log("File written finished", error);
         })
+        })
+        
     }
 
     static fetchAll(callback) {
