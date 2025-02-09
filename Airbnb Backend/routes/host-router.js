@@ -3,7 +3,6 @@ const path = require('path')
 const hostRouter = express.Router();
 const pathDir = require('../utils/path')
 
-// Define homes array before using it
 const homes = [];
 
 const homesController = require('../controllers/home')
