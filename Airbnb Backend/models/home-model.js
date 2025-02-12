@@ -16,7 +16,9 @@ module.exports = class Home {
             homes.push(this);
         const homePath = path.join(rootDir, 'data', 'homes.json');
         fs.writeFile(homePath, JSON.stringify(homes), error=>{
-            console.log("File written finished", error);
+           if(error) {
+            console.log("Error writing to file : ", error)
+           }
         })
         })
         
@@ -25,8 +27,6 @@ module.exports = class Home {
     static fetchAll(callback) {
         const homePath = path.join(rootDir, 'data', 'homes.json');
         fs.readFile(homePath, (err,data) =>{
-            console.log("File read : ", data);
-
             if(!err) {
                 callback(JSON.parse(data));
             }
