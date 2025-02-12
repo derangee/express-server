@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb - Rent House!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: rgb(250, 52, 52);
+            margin: 0;
+            padding: 30px;
+            color: white;
+        }
+        
+        section {
+            text-align: center;
+            margin: 5vw auto;
+            max-width: 1200px;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #ff385c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        a:hover {
+            background-color: #d63045;
+        }
+        
+        .homes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 2rem auto;
+            list-style: none;
+            width: 100%;
+            max-width: 1000px;
+            padding: 0 2rem;
+        }
+        
+        .home-card {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            max-width: 100%;
+            border: 2px solid red;
+            border-radius: 20px;
+        }
+        
+        .home-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .home-card-content {
+            padding: 1rem;
+        }
+
+        .home-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .home-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+
+        .home-location {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .home-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: rgb(244, 39, 39);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            padding: 1rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .edit, .delete {
+            padding: 8px 20px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        .edit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .edit:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        .delete {
+            background-color: #ff385c;
+            color: white;
+        }
+
+        .delete:hover {
+            background-color: #d63045;
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .homes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                padding: 0.5rem;
+            }
+
+            .edit, .delete {
+                padding: 6px 12px;
+                font-size: 0.9rem;
+                min-width: 80px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <section>
+        <ul class="homes-grid">
+            <% homes.forEach(homes=>  { %>
+                <li class="home-card">
+                    <img src="https://cdn.houseplansservices.com/content/oklm6skashaqg17gerc1otpqj3/w991x660.jpg?v=10" alt="<%= homes.House %>" class="home-photo">
+                    <div class="home-card-content">
+                        <h2 class="home-title"><%= homes.home %></h2>
+                        <p class="home-location"><%= homes.location %></p>
+                        <p class="home-price">Rs. <%= homes.price %> per night</p>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </li>
+            <% }); %>
+        </ul>    
+    <a href="host/add-home"> Add home </a>
+    </section>
+</body>
+</html>

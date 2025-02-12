@@ -31,6 +31,12 @@ exports.bookingsPage = (req, res) => {
      res.render('store/bookings')
 }
 
+exports.hostHomes = (req, res, next) => {
+    const homes = HomeModel.fetchAll(homes => {
+        res.render('host/host-home', { homes: homes })
+    }); 
+};
+
 
 
 

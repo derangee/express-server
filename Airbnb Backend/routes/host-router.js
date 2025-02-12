@@ -10,6 +10,8 @@ homesController.setHomes(homes);
 
 hostRouter.get('/add-home', homesController.addHome);
 hostRouter.post('/home-added', homesController.homeAdded);
+hostRouter.get('/your-homes', homesController.hostHomes);
+
 
 module.exports = {
     hostRouter,

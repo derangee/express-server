@@ -2,7 +2,12 @@
     <div class="header-content">
         <div class="header-flex">
             <h1>Welcome to Airbnb</h1>
-            <nav class="main-nav">
+            <button class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="mainNav">
                 <ul>
                     <li><a href="/">Home</a></li>
                     <li><a href="/bookings">Bookings</a></li>
@@ -36,6 +41,7 @@
 
     h1 {
         margin: 0;
+        font-size: 1.5rem;
     }
 
     .main-nav ul {
@@ -58,4 +64,64 @@
     .main-nav a:hover {
         background-color: rgba(255, 255, 255, 0.2);
     }
+
+    .menu-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    .menu-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: flex;
+        }
+
+        .main-nav {
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background-color: rgb(250, 52, 52);
+            padding: 20px;
+        }
+
+        .main-nav.active {
+            display: block;
+        }
+
+        .main-nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .main-nav li {
+            width: 100%;
+            text-align: center;
+        }
+
+        .main-nav a {
+            display: block;
+            padding: 10px;
+        }
+    }
 </style>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('mainNav');
+        nav.classList.toggle('active');
+    }
+</script>

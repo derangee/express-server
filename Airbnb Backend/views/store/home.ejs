@@ -45,14 +45,14 @@
         }
         
         .homes-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
-            align-items: center;
-            margin: 0 auto 2rem auto;
+            margin: 2rem auto;
             list-style: none;
             width: 100%;
-            max-width: 400px;
+            max-width: 1000px;
+            padding: 0 2rem;
         }
         
         .home-card {
@@ -60,6 +60,7 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             width: 100%;
+            max-width: 100%;
             border: 2px solid red;
             border-radius: 20px;
         }
@@ -94,6 +95,13 @@
             font-size: 1.1rem;
             font-weight: bold;
             color: rgb(244, 39, 39);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .homes-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
