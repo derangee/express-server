@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb - Rent House!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            background-color: rgb(250, 52, 52);
+            margin: 0;
+            padding: 30px;
+            color: white;
+        }
+        
+        section {
+            text-align: center;
+            margin: 5vw auto;
+            max-width: 1200px;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #ff385c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        a:hover {
+            background-color: #d63045;
+        }
+        
+        .homes-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+            margin: 0 auto 2rem auto;
+            list-style: none;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .home-card {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 100%;
+            border: 2px solid red;
+            border-radius: 20px;
+        }
+        
+        .home-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .home-card-content {
+            padding: 1rem;
+        }
+
+        .home-photo {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .home-title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #222;
+        }
+
+        .home-location {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .home-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: rgb(244, 39, 39);
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/nav.ejs') %>
+    <section>
+        <h1>Your favourite homes appear here!</h1>
+    </section>
+</body>
+</html>

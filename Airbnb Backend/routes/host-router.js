@@ -5,7 +5,7 @@ const pathDir = require('../utils/path')
 
 const homes = [];
 
-const homesController = require('../controllers/home')
+const homesController = require('../controllers/controller')
 homesController.setHomes(homes);
 
 hostRouter.get('/add-home', homesController.addHome);

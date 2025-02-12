@@ -20,3 +20,19 @@ exports.homePage = (req, res) => {
         res.render('store/home', { homes: homes })
     }); 
 }
+
+exports.favouritePage = (req, res) => {
+    const homes = HomeModel.fetchAll(homes => {
+        res.render('store/favourite', { homes: homes })
+    }); 
+}
+
+exports.bookingsPage = (req, res) => {
+     res.render('store/bookings')
+}
+
+
+
+
+
+
